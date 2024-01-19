@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>App-Dashboard </title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/favicon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: NiceAdmin
+  * Updated: Jan 09 2024 with Bootstrap v5.3.2
+  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center">
+        <img src="assets/img/favicon.png" alt="">
+        <span class="d-none d-lg-block">EquityFunds</span>
+      </a>
+      <i class="bi bi-list toggle-sidebar-btn"></i>
+    </div><!-- End Logo -->
+
+    <div class="search-bar">
+      <form class="search-form d-flex align-items-center" method="POST" action="#">
+        <input type="text" name="query" placeholder="Search" title="Enter search keyword">
+        <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+      </form>
+    </div><!-- End Search Bar -->
+
+    <nav class="header-nav ms-auto">
+      <ul class="d-flex align-items-center">
+
+        <li class="nav-item d-block d-lg-none">
+          <a class="nav-link nav-icon search-bar-toggle " href="#">
+            <i class="bi bi-search"></i>
+          </a>
+        </li><!-- End Search Icon-->
+
+        <li class="nav-item dropdown">
+
+          <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+            <i class="bi bi-bell"></i>
+            <span class="badge bg-primary badge-number">2</span>
+          </a><!-- End Notification Icon -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
+            <li class="dropdown-header">
+              You have 2 new notifications
+              <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="notification-item">
+              <i class="bi bi-exclamation-circle text-warning"></i>
+              <div>
+                <h4>Welcome to EFX</h4>
+                <p>Thank you trusting us upon a new journey in your trading career</p>
+                <p>- now</p>
+              </div>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="notification-item">
+              <i class="bi bi-x-circle text-danger"></i>
+              <div>
+                <h4>Dashboard Tour</h4>
+                <p>Hi, Please note this is <span>ONLY</span> a preview of our trading area.</p>
+                <p>- now</p>
+              </div>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li class="dropdown-footer">
+              <a href="#">Show all notifications</a>
+            </li>
+
+          </ul><!-- End Notification Dropdown Items -->
+
+        </li><!-- End Notification Nav -->
+
+        <li class="nav-item dropdown">
+
+          <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+            <i class="bi bi-chat-left-text"></i>
+            <span class="badge bg-success badge-number">3</span>
+          </a><!-- End Messages Icon -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages">
+            <li class="dropdown-header">
+              You have 3 new messages
+              <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="message-item">
+              <a href="#">
+                <img src="assets/img/team-3.jpg" alt="" class="rounded-circle">
+                <div>
+                  <h4>B. Thabiso</h4>
+                  <p>We ready to assist you, with anything you need from us...</p>
+                  <p>- now</p>
+                </div>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="message-item">
+              <a href="#">
+                <img src="assets/img/team-2.jpg" alt="" class="rounded-circle">
+                <div>
+                  <h4>Ona. Kgoroba</h4>
+                  <p>Check out new trading brandkit to help you build confidence in EFX...</p>
+                  <p>6 hrs. ago</p>
+                </div>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="message-item">
+              <a href="#">
+                <img src="assets/img/team-1.jpg" alt="" class="rounded-circle">
+                <div>
+                  <h4>Nkosinathi Carl</h4>
+                  <p>I'm ready to be your personalised EFX Account Assitant, I'm available 24/7...</p>
+                  <p>8 hrs. ago</p>
+                </div>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="dropdown-footer">
+              <a href="#">Show all messages</a>
+            </li>
+
+          </ul><!-- End Messages Dropdown Items -->
+
+        </li><!-- End Messages Nav -->
+
+        <li class="nav-item dropdown pe-3">
+
+          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+            <img src="assets/img/team-2.jpg" alt="Profile" class="rounded-circle">
+            <span class="d-none d-md-block dropdown-toggle ps-2">O. Kgoroba</span>
+          </a><!-- End Profile Iamge Icon -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+            <li class="dropdown-header">
+              <h6>Onalenna Kgoroba</h6>
+              <span>Asset Manager</span>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                <i class="bi bi-person"></i>
+                <span>My Profile</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                <i class="bi bi-gear"></i>
+                <span>Account Settings</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="#">
+                <i class="bi bi-question-circle"></i>
+                <span>Need Help?</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="#">
+                <i class="bi bi-box-arrow-right"></i>
+                <span>Sign Out</span>
+              </a>
+            </li>
+
+          </ul><!-- End Profile Dropdown Items -->
+        </li><!-- End Profile Nav -->
+
+      </ul>
+    </nav><!-- End Icons Navigation -->
+
+  </header><!-- End Header -->
+
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+      <li class="nav-item">
+        <a class="nav-link " href="index.html">
+          <i class="bi bi-grid"></i>
+          <span>Dashboard</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="pages-error-404.html">
+          <i class="bi bi-cart"></i>
+          <span>Accounts</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#">
+          <i class="bi bi-card"></i>
+          <span>Billing</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="payout.html">
+          <i class="bi bi-person"></i>
+          <span>Request Payout</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="pages-error-404.html">
+          <i class="bi bi-person"></i>
+          <span>Utilities</span>
+        </a>
+      </li>
+
+      <li class="nav-heading">Pages</li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="users-profile.html">
+          <i class="bi bi-person"></i>
+          <span>Profile</span>
+        </a>
+      </li><!-- End Profile Page Nav -->
+
+       <li class="nav-item">
+        <a class="nav-link collapsed" href="pages-login.html">
+          <i class="bi bi-box-arrow-in-right"></i>
+          <span>Already User? Login</span>
+        </a>
+      </li><!-- End Login Page Nav -->
+
+
+    </ul>
+
+  </aside><!-- End Sidebar-->
+
+  <main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Welcome Back</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Accounts</a></li>
+          <li class="breadcrumb-item active">MT5 - 46005121</li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section dashboard">
+      <div class="row">
+
+        <!-- Left side columns -->
+        <div class="col-lg-8">
+          <div class="row">
+
+            <!-- Balance Card -->
+            <div class="col-xxl-4 col-md-6">
+              <div class="card info-card sales-card">
+
+                <div class="filter">
+                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                    <li class="dropdown-header text-start">
+                      <h6>Filter</h6>
+                    </li>
+
+                    <li><a class="dropdown-item" href="#">Today</a></li>                    
+                  </ul>
+                </div>
+
+                <div class="card-body">
+                  <span class="badge bg-primary">Active</span>
+                  <h5 class="card-title">Balance <span>| Current</span></h5>
+
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <i class="bi bi-currency-dollar"></i> 
+                    </div>
+                    <div class="ps-3">
+                      <h6>$108,202.01</h6>
+                      <span class="text-success small pt-1 fw-bold">+8.2%</span> <span class="text-muted small pt-2 ps-1">Profit</span>
+
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div><!-- End Sales Card -->
+
+            <!-- Profit/Loss -->
+            <div class="col-xxl-4 col-md-6">
+              <div class="card info-card revenue-card">
+
+                <div class="filter">
+                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                    <li class="dropdown-header text-start">
+                      <h6>Filter</h6>
+                    </li>
+
+                    <li><a class="dropdown-item" href="#">Overall</a></li>            
+                  </ul>
+                </div>
+
+                <div class="card-body">
+                  <span class="badge bg-success">Passed</span>
+                  <h5 class="card-title">Profits <span>| Overall</span></h5>
+
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <i class="bi bi-currency-dollar"></i>
+                    </div>
+                    <div class="ps-3">
+                      <h6>$8,202.01</h6>
+                      <span class="text-success small pt-1 fw-bold">8.2%</span> <span class="text-muted small pt-2 ps-1">Gains</span>
+
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div><!-- End Revenue Card -->
+
+
+            <!-- 2nd Cards-->
+            <!-- Drawdown Card -->
+            <div class="col-xxl-4 col-md-6">
+              <div class="card info-card sales-card">
+
+                <div class="filter">
+                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                    <li class="dropdown-header text-start">
+                      <h6>Filter</h6>
+                    </li>
+
+                    <li><a class="dropdown-item" href="pages-error-404.html">Report</a></li>                    
+                  </ul>
+                </div>
+
+                <div class="card-body">
+                  <span class="badge bg-success">Passed</span>
+                  <h5 class="card-title">Drawdown <span>| Equity</span></h5>
+
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <i class="bi bi-bootstrap-reboot"></i>
+                    </div>
+                    <div class="ps-3">
+                      <h6>$0</h6>
+                      <span class="text-success small pt-1 fw-bold">0%</span> <span class="text-muted small pt-2 ps-1">decrease</span>
+
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div><!-- End Sales Card -->
+
+            <!-- Days Card -->
+            <div class="col-xxl-4 col-md-6">
+              <div class="card info-card revenue-card">
+
+                <div class="filter">
+                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                    <li class="dropdown-header text-start">
+                      <h6>Filter</h6>
+                    </li>
+
+                    <li><a class="dropdown-item" href="#">Overall</a></li>
+                  </ul>
+                </div>
+
+                <div class="card-body">
+                  <span class="badge bg-warning text-dark">On Going</span>
+                  <h5 class="card-title">Trading Days <span>| Overall</span></h5>
+
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <i class="bi bi-calendar-check"></i>
+                    </div>
+                    <div class="ps-3">
+                      <h6>2</h6>
+                      <span class="text-success small pt-1 fw-bold">3</span> <span class="text-muted small pt-2 ps-1">Minimum Days</span>
+
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div><!-- End Revenue Card -->
+
+            <!--Cards 2 Endng-->
+
+            <!-- Reports -->
+            <div class="col-12">
+              <div class="card">
+
+                <div class="filter">
+                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                    <li class="dropdown-header text-start">
+                      <h6>Filter</h6>
+                    </li>
+
+                    <li><a class="dropdown-item" href="pages-error-404.html">Today</a></li>
+                    <li><a class="dropdown-item" href="pages-error-404.html">This Month</a></li>
+                    <li><a class="dropdown-item" href="pages-error-404.html">Overall</a></li>
+                  </ul>
+                </div>
+
+                <div class="card-body">
+                  <h5 class="card-title">Equity <span>/Report</span></h5>
+
+                  <!-- Line Chart -->
+                  <div id="reportsChart"></div>
+
+                  <script>
+                    document.addEventListener("DOMContentLoaded", () => {
+                      new ApexCharts(document.querySelector("#reportsChart"), {
+                        series: [{
+                         
+                          name: 'Equity',
+                          data: [0, 1400, 8202]
+                        }],
+                        chart: {
+                          height: 350,
+                          type: 'area',
+                          toolbar: {
+                            show: false
+                          },
+                        },
+                        markers: {
+                          size: 4
+                        },
+                        colors: ['#4154f1', '#2eca6a', '#ff771d'],
+                        fill: {
+                          type: "gradient",
+                          gradient: {
+                            shadeIntensity: 1,
+                            opacityFrom: 0.3,
+                            opacityTo: 0.4,
+                            stops: [0, 90, 100]
+                          }
+                        },
+                        dataLabels: {
+                          enabled: false
+                        },
+                        stroke: {
+                          curve: 'smooth',
+                          width: 2
+                        },
+                        xaxis: {
+                          type: 'datetime',
+                          categories: ["2024-01-05T00:00:00.000Z", "2024-01-06T01:30:00.000Z", "2024-01-07T02:30:00.000Z", "2024-01-08T03:30:00.000Z", "2024-01-09T04:30:00.000Z", "2024-01-10T05:30:00.000Z", "2024-01-11T06:30:00.000Z"]
+                        },
+                        tooltip: {
+                          x: {
+                            format: 'dd/MM/yy HH:mm'
+                          },
+                        }
+                      }).render();
+                    });
+                  </script>
+                  <!-- End Line Chart -->
+
+                </div>
+
+              </div>
+            </div><!-- End Reports -->
+
+            <!-- Recent Sales -->
+            <div class="col-12">
+              <div class="card recent-sales overflow-auto">
+
+                <div class="filter">
+                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                    <li class="dropdown-header text-start">
+                      <h6>Filter</h6>
+                    </li>
+
+                    <li><a class="dropdown-item" href="#">Today</a></li>
+                    <li><a class="dropdown-item" href="#">This Month</a></li>
+                    <li><a class="dropdown-item" href="#">This Year</a></li>
+                  </ul>
+                </div>
+
+                <div class="card-body">
+                  <h5 class="card-title">Trade History <span>| Data</span></h5>
+
+                  <table class="table table-borderless datatable">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Date and time</th>
+                        <th scope="col">Instruments</th>
+                        <th scope="col">PnL</th>
+                        <th scope="col">Status</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row"><a href="#">#2457</a></th>
+                        <td> 05/01/24 11:01:23 </td>
+                        <td><a href="#" class="text-primary">Us30.cfd</a></td>
+                        <td>$2,400</td>
+                        <td><span class="badge bg-success">Closed</span></td>
+                      </tr>
+                      <tr>
+                        <th scope="row"><a href="#">#2147</a></th>
+                        <td>05/01/24 13:05:52</td>
+                        <td><a href="#" class="text-primary">GBPUSD.i</a></td>
+                        <td>-$102</td>
+                        <td><span class="badge bg-warning">Pending</span></td>
+                      </tr>
+                      <tr>
+                        <th scope="row"><a href="#">#2049</a></th>
+                        <td>06/01/24 11:08:11</td>
+                        <td><a href="#" class="text-primary">EURUSD.i</a></td>
+                        <td>$1,470</td>
+                        <td><span class="badge bg-success">Closed</span></td>
+                      </tr>
+                      <tr>
+                        <th scope="row"><a href="#">#2644</a></th>
+                        <td>06/01/24 17:32:00</td>
+                        <td><a href="#" class="text-primar">Us30.cfd</a></td>
+                        <td>-597</td>
+                        <td><span class="badge bg-danger">Closed</span></td>
+                      </tr>
+                      <tr>
+                        <th scope="row"><a href="#">#2644</a></th>
+                        <td>07/01/24 00:44:01</td>
+                        <td><a href="#" class="text-primary">XAUUSD.m</a></td>
+                        <td>$5,065</td>
+                        <td><span class="badge bg-success">Closed</span></td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                </div>
+
+              </div>
+            </div><!-- End Recent Sales -->
+
+           
+          </div>
+        </div><!-- End Left side columns -->
+
+        <!-- Right side columns -->
+        <div class="col-lg-4">
+
+        
+
+          <!-- Website Traffic -->
+          <div class="card">
+            <div class="filter">
+              <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+              <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                <li class="dropdown-header text-start">
+                  <h6>Filter</h6>
+                </li>
+
+                <li><a class="dropdown-item" href="#">Today</a></li>
+                <li><a class="dropdown-item" href="#">This Month</a></li>
+                <li><a class="dropdown-item" href="#">This Year</a></li>
+              </ul>
+            </div>
+
+            <div class="card-body pb-0">
+              <h5 class="card-title">Most Traded <span>| Instruments</span></h5>
+
+              <div id="trafficChart" style="min-height: 400px;" class="echart"></div>
+
+              <script>
+                document.addEventListener("DOMContentLoaded", () => {
+                  echarts.init(document.querySelector("#trafficChart")).setOption({
+                    tooltip: {
+                      trigger: 'item'
+                    },
+                    legend: {
+                      top: '5%',
+                      left: 'center'
+                    },
+                    series: [{
+                      name: 'Access From',
+                      type: 'pie',
+                      radius: ['40%', '70%'],
+                      avoidLabelOverlap: false,
+                      label: {
+                        show: false,
+                        position: 'center'
+                      },
+                      emphasis: {
+                        label: {
+                          show: true,
+                          fontSize: '18',
+                          fontWeight: 'bold'
+                        }
+                      },
+                      labelLine: {
+                        show: false
+                      },
+                      data: [{
+                          value: 1048,
+                          name: 'US30.cfd'
+                        },
+                        {
+                          value: 735,
+                          name: 'XAUUSD.m'
+                        },
+                        {
+                          value: 580,
+                          name: 'GBPUSD.i'
+                        },
+                        {
+                          value: 484,
+                          name: 'EURUSD.i'
+                        },
+                        {
+                          value: 300,
+                          name: 'AUDJPY.i'
+                        }
+                      ]
+                    }]
+                  });
+                });
+              </script>
+
+            </div>
+          </div><!-- End Website Traffic -->
+
+          <!-- News & Updates Traffic -->
+          <div class="card">
+            <div class="filter">
+              <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+              <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                <li class="dropdown-header text-start">
+                  <h6>Filter</h6>
+                </li>
+
+                <li><a class="dropdown-item" href="#">Today</a></li>
+                <li><a class="dropdown-item" href="#">This Month</a></li>
+                <li><a class="dropdown-item" href="#">This Year</a></li>
+              </ul>
+            </div>
+
+            <div class="card-body pb-0">
+              <h5 class="card-title">News &amp; Updates <span>| Today</span></h5>
+
+              <div class="news">
+                <div class="post-item clearfix">
+                  <img src="assets/img/news-1.jpg" alt="">
+                  <h4><a href="https://www.reuters.com/markets/deals/reddit-seeks-launch-ipo-march-sources-2024-01-18/">Exclusive: Reddit seeks to launch IPO in March</a></h4>
+                  <p>January 18,2024</p>
+                </div>
+
+                <div class="post-item clearfix">
+                  <img src="assets/img/news-2.jpg" alt="">
+                  <h4><a href="https://www.reuters.com/markets/us/nasdaq-futures-climb-chips-boost-earnings-data-awaited-2024-01-18/">S&P 500 ends near record high as AI optimism lifts chipmakers</a></h4>
+                  <p>January 19,2024</p>
+                </div>
+
+                <div class="post-item clearfix">
+                  <img src="assets/img/news-3.jpg" alt="">
+                  <h4><a href="https://www.reut <p>Fugiat voluptas vero eaque accusantium eos. Consequuntur sed ipsam et totam...ers.com/markets/us/us-weekly-jobless-claims-fall-level-last-seen-sept-2022-2024-01-18/">US weekly jobless claims at 16-month low; homebuilding takes breather</a></h4>
+                <p>January 18,2024 </p>
+                </div>
+
+                <div class="post-item clearfix">
+                  <img src="assets/img/news-4.jpg" alt="">
+                  <h4><a href="https://www.reuters.com/markets/us/feds-bostic-says-open-earlier-rate-cuts-faster-drop-inflation-2024-01-18/">Fed's Bostic says open to earlier rate cuts on faster drop in inflation</a></h4>
+                  <p>January 19,2024</p>
+                </div>
+
+
+              </div><!-- End sidebar recent posts-->
+
+            </div>
+          </div><!-- End News & Updates -->
+
+        </div><!-- End Right side columns -->
+
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+    <div class="copyright">
+      &copy; Copyright <strong><span>Equity Funds X</span></strong>. All Rights Reserved
+    </div>
+    <div class="credits">
+      <!-- All the links in the footer should remain intact. -->
+      <!-- You can delete the links only if you purchased the pro version. -->
+      <!-- Licensing information: https://bootstrapmade.com/license/ -->
+      <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
+      Designed by <a href="https://equityfunds.online/">EFX Innovations</a>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/chart.js/chart.umd.js"></script>
+  <script src="assets/vendor/echarts/echarts.min.js"></script>
+  <script src="assets/vendor/quill/quill.min.js"></script>
+  <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
+  <script src="assets/vendor/tinymce/tinymce.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
