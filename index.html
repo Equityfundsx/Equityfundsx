@@ -90,22 +90,16 @@
 	
   <script src="https://www.google.com/recaptcha/enterprise.js" async defer></script>
 
-<!-- Matomo -->
-<script>
-  var _paq = window._paq = window._paq || [];
-  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
-  _paq.push(["setCookieDomain", "*.www.equityfunds.online"]);
-  _paq.push(['trackPageView']);
-  _paq.push(['enableLinkTracking']);
-  (function() {
-    var u="https://equityfundsonline.matomo.cloud/";
-    _paq.push(['setTrackerUrl', u+'matomo.php']);
-    _paq.push(['setSiteId', '1']);
-    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-    g.async=true; g.src='//cdn.matomo.cloud/equityfundsonline.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
-  })();
+<!-- smartlook -->
+<script type='text/javascript'>
+  window.smartlook||(function(d) {
+    var o=smartlook=function(){ o.api.push(arguments)},h=d.getElementsByTagName('head')[0];
+    var c=d.createElement('script');o.api=new Array();c.async=true;c.type='text/javascript';
+    c.charset='utf-8';c.src='https://web-sdk.smartlook.com/recorder.js';h.appendChild(c);
+    })(document);
+    smartlook('init', 'd443ab90212e49c01033ae4d496b802c29a10c9f', { region: 'eu' });
 </script>
-<!-- End Matomo Code -->
+<!-- End smartlook Code -->
 	
 </head>
 
