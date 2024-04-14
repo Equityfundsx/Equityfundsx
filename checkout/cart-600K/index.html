@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Equity Funds X - Checkout</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+ <!-- Favicons -->
+ <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="manifest" href="site.webmanifest">
+
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css'>
+<link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/fonts/roboto/Roboto-Regular.woff'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/css/swiper.min.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div id="app" v-cloak>
+  <div class="header">
+
+  <nav class="indigo darken-4">
+    <div class="nav-wrapper container">
+      <a href="#" class="brand-logo">Complete 600K Premium Roller Capital Purchase<i class="material-icons">shopping_cart</i></a>
+    </div>
+  </nav>
+      <div class="progress-container hide-on-med-and-up">
+      <div class="progress-bar js-progress-bar"></div>
+    </div>   
+  </div>
+  <div class="container wrapper">
+    <div class="row hide-on-med-and-up" v-cloak>
+      <div class="col s12 m6">
+        <div class="card">
+          <div class="card-content">
+            <p><b>Items in cart:</b> {{cartSummary.length}}</p>
+            <p><b>Account:</b> {{chosenShippingMethod.name}} - ${{shippingPrice}}</p>
+            <p><b>Total:</b> ${{basketTotal}}</p>
+            <span class="small-text grey-text text-darken-2 m-top-10 ">Fill out the information below and go directly to payment by clicking the button.</span>
+          </div>
+          <a v-on:click="scrollToBottom(); $v.name.$touch(); $v.address.$touch(); $v.email.$touch(); $v.phone.$touch();" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">arrow_downward
+</i></a>
+        </div>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s12 m6">
+        <div class="card" id="step-1">
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4"><b>Information</b></span>
+            <div class="row m-top-15">
+              <form class="col s12">
+                <div class="row">
+                  <div class="input-field col s12 l6 m-top-15">
+                    <input id="first_name" @blur="$v.name.$touch()" :class="{'invalid': $v.name.$error}" v-model="name" type="text" autocomplete="name">
+                    <label for="first_name">Full name</label>
+                    <span v-if="$v.name.$error" class="helper-text" data-error="Please fill out full name">Helper text</span>
+
+                  </div>
+                  <div class="input-field col s12 l6 m-top-15">
+                    <input id="company" v-on:blur="setCompanyShipping" v-model="company" type="text" class="validate">
+                    <label for="company">Message (optional)</label>
+                  </div>
+                </div>
+                <div class="row m-top-15">
+                  <div class="input-field col s12 autocomplete-container">
+                    <input class="js-autocomplete-input" id="dawa-autocomplete-input" @blur="$v.address.$touch()" :class="{'invalid': $v.address.$error}" v-model="addressInput" type="url" class="validate" autocomplete="false">
+                    <label for="dawa-autocomplete-input">Full address</label>
+                    <span v-if="$v.address.$error" class="helper-text" data-error="Please fill out full address">Helper text</span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12 l6 m-top-15">
+                    <input @blur="$v.email.$touch()" :class="{'invalid': $v.email.$error}" id="email" v-model="email" type="text" class="validate" autocomplete="email">
+                    <label for="email">Email</label>
+                    <span v-if="$v.email.$error" class="helper-text" data-error="Please fill out email">Helper text</span>
+                  </div>
+                  <div class="input-field col s12 l6 m-top-15">
+                    <input @blur="$v.phone.$touch()" :class="{'invalid': $v.phone.$error}" id="phone" v-model="phone" type="text" class="validate" autocomplete="tel">
+                    <label for="phone">Phone
+                    </label>
+                    <span v-if="$v.phone.$error" class="helper-text" data-error="Please fill out phone">Helper text</span>
+                  </div>
+                </div>
+                <label class="d-block m-top-15">
+                  <input type="checkbox" v-model="showAlternative" class="filled-in" />
+                  <span>Purchase for alternative member (family/friend)</span>
+                </label>
+
+                <div v-if="showAlternative" class="m-top-15">
+                  <div class="row m-top-15" v-if="showAlternative">
+                    <div class="input-field col s12 l6">
+                      <input id="del_first_name" v-model="delName" type="text" class="validate">
+                      <label for="del_first_name">Full name</label>
+                    </div>
+                    <div class="input-field col s12 l6">
+                      <input id="del_company" v-model="delCompany" type="text" class="validate">
+                      <label for="del_company">Message (optional)</label>
+                    </div>
+                  </div>
+                  <div class="row m-top-15">
+                    <div class="input-field col s12 autocomplete-container">
+                      <input class="autocomplete" id="del_address" class="validate" v-model="delAddressInput" type="text" class="validate" autocomplete="shipping street-address">
+                      <label for="del_address">Full address</label>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="card" id="step-2" v-cloak>
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4"><b>Account Platform</b></span>
+            <p>Pleasse choose your desired trading platform.</p>
+            <form action="#">
+              <p class="p-top-10" v-for="(shippingMethod, index) in shippingMethods">
+                <label>
+                  <input v-model="shipping" name="group1" :value="shippingMethod.id" type="radio" :id="shippingMethod.id" class="with-gap m-top-15" />
+                  <span>{{shippingMethod.desc}} - ${{shippingMethod.price}}</span>
+                </label>
+              </p>
+            </form>
+            <span class="card-title activator grey-text text-darken-4 m-top-15 p-top-10"><b>Discount Coupon</b></span>
+            <label v-if="!showVoucher" class="d-block m-top-15">
+                  <input type="checkbox" v-model="showVoucher" class="filled-in" />
+                  <span>I have a coupon code</span>
+                </label>
+            <div v-if="showVoucher" class="row m-top-10 p-top-10">
+              <div class="input-field col s12 l6">
+                <input id="voucher" type="text" class="validate">
+                <label for="voucher">Coupon</label>
+              </div>
+              <div class="col s12 l6">
+                <a class="waves-effect waves-light btn indigo darken-4 m-top-10">Apply coupon</a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="card" id="step-3" v-cloak>
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4"><b>Recent Funded Verifications ...</b></span>
+            <div class="row m-top-15">
+              <swiper ref="awesomeSwiper" :options="swiperOptions">
+                <!-- slides -->
+                <swiper-slide>
+                  <div class="card">
+                    <div class="card-image">
+                      <img src="https://www.equityfunds.online/assets/img/c17.JPG">
+                      <a class="btn-floating halfway-fab waves-effect waves-light indigo darken-4"><i class="material-icons">shopping_basket</i></a>
+                    </div>
+                    <div class="card-content">
+                      <span class="flow-text">Carl Winfrey</span>
+                      
+                    </div>
+                  </div>
+                </swiper-slide>
+                <swiper-slide>
+                  <div class="card">
+                    <div class="card-image">
+                      <img src="https://www.equityfunds.online/assets/img/c18.JPG">
+                      <a class="btn-floating halfway-fab waves-effect waves-light indigo darken-4"><i class="material-icons">shopping_basket</i></a>
+                    </div>
+                    <div class="card-content">
+                      <span class="flow-text">Kgotso Patula</span>
+                      
+                    </div>
+                  </div>
+                </swiper-slide>
+                <swiper-slide>
+                  <div class="card">
+                    <div class="card-image">
+                      <img src="https://www.equityfunds.online/assets/img/c13.JPG">
+                      <a class="btn-floating halfway-fab waves-effect waves-light indigo darken-4"><i class="material-icons">shopping_basket</i></a>
+                    </div>
+                    <div class="card-content">
+                      <span class="flow-text">Tshepiso Kgale</span>
+                      
+                    </div>
+                  </div>
+                </swiper-slide>
+                <swiper-slide>
+                  <div class="card">
+                    <div class="card-image">
+                      <img src="https://www.equityfunds.online/assets/img/c15.JPG">
+                      <a class="btn-floating halfway-fab waves-effect waves-light indigo darken-4"><i class="material-icons">shopping_basket</i></a>
+                    </div>
+                    <div class="card-content">
+                      <span class="flow-text">Henry Anderson</span>
+                      
+                    </div>
+                  </div>
+                </swiper-slide>
+                <div class="swiper-pagination" slot="pagination"></div>
+                <div class="swiper-button-prev" slot="button-prev"></div>
+                <div class="swiper-button-next" slot="button-next"></div>
+              </swiper>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+      <div class="col s12 m6">
+        <div class="card" id="step-4" v-cloak>
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4"><b>Order summary</b></span>
+            <div class="row info">
+              <div class="col s12 m6">
+                <p><b>Billing address:</b></p>
+                <p>{{ name }}</p>
+                <p>{{ company }}</p>
+                <p>{{ addressComputed }}</p>
+                <p>{{ cityComputed }}</p>
+                <p>{{ email }}</p>
+                <p>{{ phone }}</p>
+              </div>
+              <div class="col s12 m6" v-if="showAlternative">
+                <p><b>Alternative Member:</b></p>
+                <p>{{ delName }}</p>
+                <p>{{ delCompany }}</p>
+                <p>{{ delAddressComputed }}</p>
+                <p>{{ delCityComputed }}</p>
+              </div>
+            </div>
+            <span class="card-title activator grey-text text-darken-4 m-top-15"><b>Your order</b></span>
+            
+            <ul>
+              <li v-if="shipping">
+                <span><b>MT Platform</b> <i>{{chosenShippingMethod.desc}}</i></span>
+                <span class="right">${{chosenShippingMethod.price}}</span>
+              </li>
+              <li v-if="taxTotal">
+                <span><b>TAX</b></span>
+                <span class="right">${{taxTotal}}</span>
+              </li>
+            </ul>
+          </div>
+          <div class="card-action" v-if="basketTotal">
+            <span><b>Total</b></span>
+            <span class="right"><b>${{basketTotal}}</b></span>
+          </div>
+          <div class="card-action">
+            <span class="card-title activator grey-text text-darken-4"><b>Complete Payment</b></span>
+            <p class="payment-info">Please choose your desired payment method. Chosen option will be used as default on payouts.</p>
+            <p>
+              <label>
+                <input type="checkbox" v-model="consent" class="filled-in" />
+                <span>I hereby confirm and accept the <a href="https://www.equityfunds.online/termsandconditions.pdf" class="indigo-text text-darken-4">Anti-Money Laundering Policy</a></span>
+            </label>
+            <p>
+              <label>
+                  <input type="checkbox" v-model="consent" class="filled-in" />
+                  <span>I hereby confirm that the information that I have provided is correct and that I accept the <a href="https://www.equityfunds.online/termsandconditions.docx" class="indigo-text text-darken-4">Terms and Conditions</a></span>
+              </label></p>
+            
+              <div align="center">
+                <script src="https://www.paypal.com/sdk/js?client-id=BAAbsZzlCnNm_QBeUd2MaqcWqBMlnAAIGq9KThOhOqlhu-jWS0Ym-yBVdzl8QZj-yo_YyGmmU-GkLiEJ34&components=hosted-buttons&disable-funding=venmo&currency=USD"></script>
+<div id="paypal-container-ERQJKKJJA7W7Q"></div>
+<script>
+  paypal.HostedButtons({
+    hostedButtonId: "ERQJKKJJA7W7Q",
+  }).render("#paypal-container-ERQJKKJJA7W7Q")
+</script>
+                </div>
+            </div>
+             
+            <div align="center">
+              <p>Crypto Payment is Now Available:</p>
+              <a href="https://nowpayments.io/payment/?iid=6311371279"> Pay with <b>Crypto</b></a>
+                </div> 
+                <br>
+                <br>
+                <p>
+                  </div>
+                </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/vuex/3.0.1/vuex.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.16.2/axios.min.js'></script>
+<script src='https://dawa.aws.dk/js/autocomplete/dawa-autocomplete2.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/js/swiper.min.js'></script>
+<script src='https://cdn.jsdelivr.net/npm/vue-awesome-swiper@3.1.2/dist/vue-awesome-swiper.js'></script>
+<script src='https://unpkg.com/vuelidate@0.6.2/dist/vuelidate.min.js'></script>
+<script src='https://unpkg.com/vuelidate@0.6.2/dist/validators.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
